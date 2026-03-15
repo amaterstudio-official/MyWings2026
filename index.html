@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyWings 2026 | AMATER STUDIO</title>
+    
+    <link rel="icon" type="image/png" href="img/logo1.png">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav>
+        <button onclick="show('home')">Home</button>
+        <button onclick="show('aboutgame')">About Project</button>
+        <button onclick="show('download')">Download</button>
+        <button onclick="show('community')">Community</button>
+    </nav>
+
+    <header>
+        <span class="subtitle" style="color:#fff; opacity:0.6">AMATER STUDIO PRESENTS</span>
+        <h1>MYWINGS 2026</h1>
+        <p>"The future of simulation is open."</p>
+        <button class="btn" style="margin-top: 30px;" onclick="show('aboutgame')">Discover More</button>
+    </header>
+
+    <section id="home" class="active">
+        <div class="card">
+            <span class="subtitle">MyWings Mission</span>
+            <h3>Next Generation Open-Source Flight</h3>
+            <p>We combine cutting-edge graphics with uncompromising flight physics. MyWings 2026 is a platform where the community becomes the developer.</p>
+        </div>
+
+        <div class="promo-banner">
+            <img src="https://cdn.flightsim.to/images/28/fenixsim-a320-lufthansa-100-year-anniversary-requested-559531-1769179555-ri62Q.jpg" class="promo-bg">
+            <div class="promo-content">
+                <div class="btn-play" onclick="openVideo()"><i class="fa-solid fa-play"></i></div>
+                <span class="subtitle" style="color: white;">Official Reveal</span>
+                <h2 style="font-family: Orbitron; font-size: 35px; margin-bottom: 15px;">Watch MyWings Trailer</h2>
+                <p style="color: white; opacity: 0.8;">Watch unique footage from our engine and experience the atmosphere of next-gen simulation.</p>
+            </div>
+        </div>
+
+        <div id="fleet-manager" class="card" style="padding:0; overflow:hidden;">
+            <div class="aircraft-showcase" style="padding: 45px;">
+                <div class="aircraft-image">
+                    <img src="img/1.png" alt="Aircraft" id="mainAircraftImg">
+                </div>
+                <div class="aircraft-content">
+                    <span class="subtitle">Study Level Fleet</span>
+                    <h3 id="aircraftName">Boeing 737-800</h3>
+                    <p id="aircraftDesc">Focused on manual flight enthusiasts and raw mechanics. From classic gauges to modern glass cockpits.</p>
+                    <div style="display:flex; gap:15px; margin-top:20px;">
+                        <button class="btn" onclick="nextAircraft()">Next Aircraft</button>
+                    </div>  
+                </div>
+            </div>
+        </div>
+
+        <div style="display: flex; justify-content: space-between; align-items: baseline; margin-top: 60px;">
+            <h3>Latest Updates</h3>
+            <button onclick="show('blog')" class="btn" style="padding: 10px 20px; font-size: 12px; border: 1px solid #00c6ff; background: transparent;">View All</button>
+        </div>
+
+        <div class="news-grid">
+            <div class="news-card">
+                <div class="news-image-wrapper"><img src="img/CITY.png"></div>
+                <div class="news-meta"><span>March 15, 2026</span><span style="color:#00c6ff">Update</span></div>
+                <div class="news-body">
+                    <h4>Global World Model</h4>
+                    <p>The new update brings a fully modeled worldwide terrain...</p>
+                    <a href="#" class="read-more">Read More →</a>
+                </div>
+            </div>
+            <div class="news-card">
+                <div class="news-image-wrapper"><img src="img/CITYTOP.png"></div>
+                <div class="news-meta"><span>March 10, 2026</span><span style="color:#00c6ff">News</span></div>
+                <div class="news-body">
+                    <h4>MyWings VR Support</h4>
+                    <p>We are working on full Virtual Reality support via NVIDIA CloudXR...</p>
+                    <a href="#" class="read-more">Read More →</a>
+                </div>
+            </div>
+        </div>
+
+        <div style="margin-top: 80px;">
+            <span class="subtitle">Gallery</span>
+            <h3>Take to the Skies</h3>
+            <div class="gallery-wrapper">
+                <div class="gallery-track" id="galleryTrack">
+                    <img src="https://cdn.flightsim.to/images/26/fly-germany-fbw-a320-neo-110-1719075600-2pbDY.jpg" alt="Gallery 1">
+                    <img src="https://cdn.flightsim.to/images/25/silverwings-fbw-a320-neo-110-1682977772-4myvs.jpg" alt="Gallery 2">
+                    <img src="https://cdn.flightsim.to/images/22/easyjet-a320-neo-g-uzha-8k-VfPzu.jpg" alt="Gallery 3">
+                    <img src="https://cdn.flightsim.to/images/27/easyjet-eurovision-2025-fbw-a32nx-g-uzhs-8k-577192-1752760672-MWYhx.jpg" alt="Gallery 4">
+                </div>
+            </div>
+            <div style="display:flex; justify-content:center; gap:20px;">
+                <button class="btn" style="border-radius:50%; width:50px; height:50px; padding:0" onclick="moveGallery(-1)"><i class="fa-solid fa-chevron-left"></i></button>
+                <button class="btn" style="border-radius:50%; width:50px; height:50px; padding:0" onclick="moveGallery(1)"><i class="fa-solid fa-chevron-right"></i></button>
+            </div>
+        </div>
+    </section>
+
+    <section id="aboutgame">
+        <div class="card">
+            <span class="subtitle">Our Vision & Collaboration</span>
+            <h3>A Standard, Not an Add-on</h3>
+            <p>We believe in integration, not isolation. Our goal is close cooperation with leading open-source aircraft developers. We want legendary planes like the <strong>A320neo (FBW)</strong>, <strong>A380X</strong>, or <strong>A330-900 (Headwind)</strong> to be native parts of the MyWings core.</p>
+            
+            <div class="features-grid">
+                <div class="feature-item">
+                    <h4>Core Systems</h4>
+                    <p>Optimized for deep Airbus and Boeing systems. A simulator built from the ground up for complex avionics and detailed hydraulic circuits.</p>
+                </div>
+                <div class="feature-item">
+                    <h4>Open Architecture</h4>
+                    <p>SDK designed to make aircraft implementation smoother than ever. Every flight model parameter is fully documented.</p>
+                </div>
+                <div class="feature-item">
+                    <h4>Community Code</h4>
+                    <p>Every line of simulator code is available on GitHub. Transparency is our priority – from wheel physics to cloud rendering.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="card" style="margin: 20px 0; border-left: 4px solid #00c6ff; background: linear-gradient(145deg, #0d111b, #151a26); padding: 30px;">
+            <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 20px;">
+                <div style="flex: 1; min-width: 280px;">
+                    <span class="subtitle" style="letter-spacing: 3px; font-size: 10px; color: #00c6ff; font-family: 'Orbitron';">Follow Us</span>
+                    <h3 style="margin: 10px 0; font-family: 'Orbitron'; color: white;">Stay Connected!</h3>
+                    <p style="color: #a0a0a0; font-size: 14px; margin: 0;">Get the latest updates and connect with the community.</p>
+                </div>
+                <div style="display: flex; gap: 15px; flex-wrap: wrap;">
+                    <a href="#" class="social-btn discord" title="Discord"><i class="fa-brands fa-discord"></i></a>
+                    <a href="#" class="social-btn youtube" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                    <a href="#" class="social-btn instagram" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" class="social-btn tiktok" title="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="card" style="background: linear-gradient(145deg, #0d111b, #151a26);">
+            <span class="subtitle">Under the Hood</span>
+            <h3>Uncompromising Engine</h3>
+            <p>MyWings 2026 runs on a custom rendering core built on <strong>Vulkan 1.3</strong>, allowing for high performance even on mid-range systems while maintaining photorealistic visuals.</p>
+            <div class="features-grid">
+                <div class="feature-item">
+                    <h4>Atmospheric Effects</h4>
+                    <p>Dynamic weather based on real METAR and GFS data. Real-time air flow simulation, including thermals and mountain turbulence.</p>
+                </div>
+                <div class="feature-item">
+                    <h4>Global Scenery</h4>
+                    <p>A combination of satellite imagery and procedurally generated terrain for worldwide coverage with high-detail airports.</p>
+                </div>
+            </div>
+        </div>
+
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 25px; margin-top: 50px;">
+            <div>
+                <span class="subtitle">Support & Specs</span>
+                <h3>Frequently Asked Questions</h3>
+            </div>
+            <button class="btn" style="padding: 10px 20px; font-size: 12px; border: 1px solid #00c6ff; background: transparent;">Documentation</button>
+        </div>
+
+        <div class="faq-container">
+            <div class="faq-content">
+                <div class="faq-item">
+                    <i class="fa-solid fa-microchip"></i>
+                    <h4>Minimum Requirements</h4>
+                    <ul class="req-list">
+                        <li><strong>OS:</strong> Windows 10 or 11 (64-bit)</li>
+                        <li><strong>CPU:</strong> Intel i3/i5/i7/i9 (4+ cores) / AMD Ryzen 3/5/7</li>
+                        <li><strong>RAM:</strong> 8 GB (16 GB recommended for VR)</li>
+                        <li><strong>GPU:</strong> NVIDIA/AMD with Vulkan 1.3 support (min 4GB VRAM)</li>
+                        <li><strong>Storage:</strong> 25 GB SSD</li>
+                    </ul>
+                </div>
+                <div class="faq-item">
+                    <i class="fa-solid fa-gamepad"></i>
+                    <h4>Joystick Support?</h4>
+                    <p>Yes, the simulator fully supports various hardware. With native mapping, just plug and play for most Thrustmaster, Logitech, and Honeycomb models.</p>
+                </div>
+            </div>
+            <div class="faq-visual">
+                <img src="https://cdn.flightsim.to/images/27/easyjet-eurovision-2025-fbw-a32nx-g-uzhs-8k-577192-1752760672-MWYhx.jpg" alt="Sim Detail">
+                <p style="font-size: 12px; margin-top: 10px; text-align: center; font-style: italic;">Early Alpha capture – real-time rendering.</p>
+            </div>
+        </div>
+
+        <div class="card" style="margin: 20px 0; border-top: 3px solid #00c6ff; background: linear-gradient(145deg, #0d111b, #151a26); text-align: center; padding: 40px 20px;">
+            <div style="margin-bottom: 20px;">
+                <div class="coffee-icon"><i class="fa-solid fa-mug-hot" style="color: #00c6ff; font-size: 40px;"></i></div>
+            </div>
+            <h3 style="font-family: 'Orbitron'; color: white; margin-bottom: 10px;">Support MyWings Development</h3>
+            <p style="color: #a0a0a0; max-width: 500px; margin: 0 auto 25px auto; font-size: 14px; line-height: 1.6;">
+                Enjoying the sim? Every contribution helps us keep servers running and speed up development. Thanks for the coffee!
+            </p>
+            <a href="#" target="_blank" class="donate-btn"><i class="fa-solid fa-heart"></i> Buy us a Coffee (Donate)</a>
+        </div>
+    </section>
+
+    <section id="download">
+        <div class="card" style="text-align:center;">
+            <span class="subtitle">Download Center</span>
+            <h3>Get MyWings 2026</h3>
+            <p>Currently in early development (Alpha). Download the installer to access latest builds.</p>
+            <button onclick="show('download_final')" class="btn" style="margin-top:20px;">Download Installer for Windows</button>
+        </div>
+    </section>
+
+    <section id="community">
+        <div class="card" style="border-top: 3px solid #00c6ff;">
+            <span class="subtitle"><i class="fa-solid fa-users"></i> Community Hub</span>
+            <h3>Bulletin Board</h3>
+            <p>Share your screenshots and ideas. <span style="color: #00c6ff;">Images are optional.</span></p>
+            <button class="btn" onclick="openPostModal()" style="margin-top: 10px;">
+                <i class="fa-solid fa-pen-to-square"></i> Create Post
+            </button>
+            <div id="community-feed" class="news-grid" style="margin-top: 40px;"></div>
+        </div>
+
+        <div id="post-modal" class="video-modal" style="display: none; align-items: center; justify-content: center; backdrop-filter: blur(8px);">
+            <div class="card" style="max-width: 500px; width: 95%; position: relative; border: 1px solid #00c6ff;">
+                <span class="close-video" onclick="closePostModal()">&times;</span>
+                <h3 style="text-align: center;"><i class="fa-solid fa-paper-plane"></i> New Post</h3>
+                <form id="community-form">
+                    <div style="margin-bottom: 15px;">
+                        <label style="font-size: 10px; color: #00c6ff;"><i class="fa-solid fa-envelope"></i> EMAIL (for verification)</label>
+                        <input type="email" id="post-email" required placeholder="pilot@email.com" 
+                               style="width:100%; padding: 10px; background: rgba(255,255,255,0.05); border: 1px solid #333; color: white; border-radius: 8px;">
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <label style="font-size: 10px; color: #00c6ff;"><i class="fa-solid fa-user"></i> NICKNAME</label>
+                        <input type="text" id="post-nickname" required maxlength="20" placeholder="Captain Maverick" 
+                               style="width:100%; padding: 10px; background: rgba(255,255,255,0.05); border: 1px solid #333; color: white; border-radius: 8px;">
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <label style="font-size: 10px; color: #00c6ff;"><i class="fa-solid fa-comment"></i> MESSAGE</label>
+                        <textarea id="post-message" rows="3" required maxlength="200" placeholder="Flying from Prague to London..." 
+                                  style="width:100%; padding: 10px; background: rgba(255,255,255,0.05); border: 1px solid #333; color: white; border-radius: 8px; resize: none;"></textarea>
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <label style="font-size: 10px; color: #00c6ff;"><i class="fa-solid fa-image"></i> SCREENSHOT (optional)</label>
+                        <input type="file" id="post-file" accept="image/*" 
+                               style="width:100%; padding: 8px; background: #0d111b; border: 1px dashed #555; color: #888; border-radius: 8px;">
+                    </div>
+                    <div style="margin-bottom: 20px; display: flex; align-items: flex-start; gap: 10px; text-align: left;">
+                        <input type="checkbox" id="rules-check" required style="margin-top: 4px;">
+                        <label for="rules-check" style="font-size: 11px; color: #a0a0a0;">
+                            <i class="fa-solid fa-shield-halved"></i> I agree to the rules. No profanity or spam.
+                        </label>
+                    </div>
+                    <button type="submit" class="btn" style="width: 100%;">PUBLISH</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <section id="download_final">
+        <div class="card" style="text-align:center;">
+            <span class="subtitle" id="download-subtitle">Download Center</span>
+            <h3 id="download-title">Get MyWings 2026</h3>
+            <p id="download-desc">Choose your platform and start flying. Current version: <strong>v1.2.4 (Alpha)</strong></p>
+
+            <div class="features-grid" style="margin-top: 40px;">
+                <div class="feature-item" style="cursor:pointer;" onclick="startDownload('Windows')">
+                    <i class="fa-brands fa-windows" style="font-size: 40px; color: #00c6ff; margin-bottom: 15px;"></i>
+                    <h4>Windows</h4>
+                    <p>Installer for Win 10/11</p>
+                    <span class="read-more">Download .exe</span>
+                </div>
+                <div class="feature-item" style="cursor:pointer;" onclick="startDownload('macOS')">
+                    <i class="fa-brands fa-apple" style="font-size: 40px; color: #fff; margin-bottom: 15px;"></i>
+                    <h4>macOS</h4>
+                    <p>Intel & Apple Silicon</p>
+                    <span class="read-more">Download .dmg</span>
+                </div>
+                <div class="feature-item" style="cursor:pointer;" onclick="startDownload('Android')">
+                    <i class="fa-brands fa-android" style="font-size: 40px; color: #a4c639; margin-bottom: 15px;"></i>
+                    <h4>Android</h4>
+                    <p>Mobile Alpha version</p>
+                    <span class="read-more">Download .apk</span>
+                </div>
+            </div>
+
+            <div id="download-countdown" style="display:none; margin-top: 30px; padding: 25px; border: 1px dashed #00c6ff; border-radius: 15px; background: rgba(0, 198, 255, 0.05);">
+                <p id="countdown-text">Your download for <strong id="platform-name"></strong> starts in <span id="seconds">10</span> seconds...</p>
+                <div style="width: 100%; background: rgba(255,255,255,0.1); height: 6px; margin-top: 15px; border-radius: 10px; overflow: hidden;">
+                    <div id="progress-bar" style="width: 100%; background: linear-gradient(90deg, #00c6ff, #0072ff); height: 100%; transition: 1s linear;"></div>
+                </div>
+            </div>
+
+            <div style="margin-top: 50px;">
+                <button class="btn" style="background: transparent; border: 1px solid #444; color: #888;" onclick="toggleArchive()">
+                    <i class="fa-solid fa-clock-rotate-left"></i> Show Older Versions
+                </button>
+                <div id="version-archive" style="display:none; margin-top: 25px; background: rgba(13, 17, 27, 0.8); border-radius: 15px; border: 1px solid rgba(255,255,255,0.05); overflow: hidden;">
+                    <table style="width: 100%; color: #a0a0a0; font-size: 14px; border-collapse: collapse; text-align: left;">
+                        <thead>
+                            <tr style="background: rgba(255,255,255,0.02); color: #fff;">
+                                <th style="padding: 15px;">Version</th>
+                                <th>Status</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                                <td style="padding: 15px;">v1.2.3</td>
+                                <td>Stable Alpha</td>
+                                <td><button class="read-more" style="background:none; border:none; cursor:pointer;" onclick="openVersionSelection('v1.2.3')">Select Platform</button></td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                                <td style="padding: 15px;">v1.2.0</td>
+                                <td>Legacy Build</td>
+                                <td><button class="read-more" style="background:none; border:none; cursor:pointer;" onclick="openVersionSelection('v1.2.0')">Select Platform</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="videoModal" class="video-modal" onclick="closeVideo()">
+        <div class="video-container" onclick="event.stopPropagation()">
+            <span class="close-video" onclick="closeVideo()">×</span>
+            <iframe id="trailerFrame" src="" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
+    </div>
+
+    <footer>
+        &copy; 2026 AMATER STUDIO | MyWings Open Source Project
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
