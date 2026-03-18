@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyWings 2026 | AMATER STUDIO</title>
+    
+    <link rel="icon" type="image/png" href="img/logo1.png">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav>
+        <button onclick="show('home')">Home</button>
+        <button onclick="show('aboutgame')">About Project</button>
+        <button onclick="show('download')">Download</button>
+        <button onclick="show('community')">Community</button>
+    </nav>
+
+    <header>
+        <span class="subtitle" style="color:#fff; opacity:0.6">AMATER STUDIO PRESENTS</span>
+        <h1>MYWINGS 2026</h1>
+        <p>"The future of simulation is open."</p>
+        <!-- <button class="btn" style="margin-top: 30px;" onclick="show('aboutgame')">Discover More</button> -->
+    </header>
+
+    <section id="home" class="active">
+        <div class="card">
+            <span class="subtitle">MyWings Mission</span>
+            <h3>Next Generation Open-Source Flight</h3>
+            <p>We combine cutting-edge graphics with uncompromising flight physics. MyWings 2026 is a platform where the community becomes the developer.</p>
+        </div>
+
+        <div class="promo-banner">
+            <img src="https://cdn.flightsim.to/images/28/fenixsim-a320-lufthansa-100-year-anniversary-requested-559531-1769179555-ri62Q.jpg" class="promo-bg">
+            <div class="promo-content">
+                <div class="btn-play" onclick="openVideo()"><i class="fa-solid fa-play"></i></div>
+                <span class="subtitle" style="color: white;">Official Reveal</span>
+                <h2 style="font-family: Orbitron; font-size: 35px; margin-bottom: 15px;">Watch MyWings Trailer</h2>
+                <p style="color: white; opacity: 0.8;">Watch unique footage from our engine and experience the atmosphere of next-gen simulation.</p>
+            </div>
+        </div>
+
+        <div id="fleet-manager" class="card" style="padding:0; overflow:hidden;">
+            <div class="aircraft-showcase" style="padding: 45px;">
+                <div class="aircraft-image">
+                    <img src="img/1.png" alt="Aircraft" id="mainAircraftImg">
+                </div>
+                <div class="aircraft-content">
+                    <span class="subtitle">Study Level Fleet</span>
+                    <h3 id="aircraftName">Boeing 737-800</h3>
+                    <p id="aircraftDesc">Focused on manual flight enthusiasts and raw mechanics. From classic gauges to modern glass cockpits.</p>
+                    <div style="display:flex; gap:15px; margin-top:20px;">
+                        <button class="btn" onclick="nextAircraft()">Next Aircraft</button>
+                    </div>  
+                </div>
+            </div>
+        </div>
+
+        <div style="display: flex; justify-content: space-between; align-items: baseline; margin-top: 60px;">
+            <h3>Latest Updates</h3>
+            <button onclick="show('blog')" class="btn" style="padding: 10px 20px; font-size: 12px; border: 1px solid #00c6ff; background: transparent;">View All</button>
+        </div>
+
+        <div class="news-grid">
+            
+            <div class="news-card">
+                <div class="news-image-wrapper">
+                    <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=1000" alt="New World Generation">
+                </div>
+                <div class="news-meta">
+                    <span><i class="fa-solid fa-calendar-days"></i> March 15, 2026</span>
+                    <span><i class="fa-solid fa-tag"></i> World Update</span>
+                </div>
+                <div class="news-body">
+                    <h3 style="font-size: 22px; margin-bottom: 15px;">Revolutionary <span class="animate-gradient">Global Scenery</span> is Here!</h3>
+                    <p>We are thrilled to announce our biggest update yet! Our team has successfully completed the <strong>full 3D modeling of the entire world</strong>. Every mountain, valley, and coastline has been redesigned from the ground up to provide an unparalleled level of realism.</p>
+                    <p>Experience high-resolution terrain data, procedurally generated cities, and accurate vegetation patterns that react to the local climate. Whether you are flying over the Alps or the Amazon, the view from your cockpit will never be the same.</p>
+        
+                    <div style="margin-top: 20px; padding-top: 15px; border-top: 1px solid rgba(255,255,255,0.1);">
+                        <a onclick="show('world-update-section')" class="read-more">Learn more about World Gen 2.0 →</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="news-card">
+                <div class="news-image-wrapper">
+                    <img src="https://images.unsplash.com/photo-1513002749550-c59d786b8e6c?auto=format&fit=crop&q=80&w=1000" alt="Volumetric Clouds Update">
+                </div>
+                <div class="news-meta">
+                    <span><i class="fa-solid fa-microchip"></i> Engine Update</span>
+                    <span><i class="fa-solid fa-calendar-days"></i> March 15, 2026</span>
+                </div>
+                <div class="news-body">
+                    <h3 style="font-size: 22px; margin-bottom: 15px;">The Sky Reimagined: <span class="animate-gradient">Volumetric Clouds</span></h3>
+        
+                    <p>Say goodbye to flat horizons. Our latest technical milestone introduces a fully simulated atmosphere. By utilizing advanced <strong>Ray-Marching technology</strong>, we've created clouds that possess real volume, mass, and reactive lighting.</p>
+        
+                    <p>Watch as sunlight pierces through dense storm cells and shadows wrap perfectly around your aircraft's fuselage in real-time. Experience true 3D depth as you climb through multi-layered weather systems.</p>
+
+                    <div style="margin-top: 20px; padding-top: 15px; border-top: 1px solid rgba(255,255,255,0.1);">
+                        <a onclick="show('clouds-section')" class="read-more" style="cursor: pointer;">Explore the Atmosphere →</a>
+                    </div>
+                </div>
+            </div>
+        </div>    
+
+            
+
+        <div style="margin-top: 80px;">
+            <span class="subtitle">Gallery</span>
+            <h3>Take to the Skies</h3>
+            <div class="gallery-wrapper">
+                <div class="gallery-track" id="galleryTrack">
+                    <img src="https://cdn.flightsim.to/images/26/fly-germany-fbw-a320-neo-110-1719075600-2pbDY.jpg" alt="Gallery 1">
+                    <img src="https://cdn.flightsim.to/images/25/silverwings-fbw-a320-neo-110-1682977772-4myvs.jpg" alt="Gallery 2">
+                    <img src="https://cdn.flightsim.to/images/22/easyjet-a320-neo-g-uzha-8k-VfPzu.jpg" alt="Gallery 3">
+                    <img src="https://cdn.flightsim.to/images/27/easyjet-eurovision-2025-fbw-a32nx-g-uzhs-8k-577192-1752760672-MWYhx.jpg" alt="Gallery 4">
+                </div>
+            </div>
+            <div style="display:flex; justify-content:center; gap:20px;">
+                <button class="btn" style="border-radius:50%; width:50px; height:50px; padding:0" onclick="moveGallery(-1)"><i class="fa-solid fa-chevron-left"></i></button>
+                <button class="btn" style="border-radius:50%; width:50px; height:50px; padding:0" onclick="moveGallery(1)"><i class="fa-solid fa-chevron-right"></i></button>
+            </div>
+        </div>
+    </section>
+
+    <section id="aboutgame">
+        <div class="card">
+            <span class="subtitle">Our Vision & Collaboration</span>
+            <h3>A Standard, Not an Add-on</h3>
+            <p>We believe in integration, not isolation. Our goal is close cooperation with leading open-source aircraft developers. We want legendary planes like the <strong>A320neo (FBW)</strong>, <strong>A380X</strong>, or <strong>A330-900 (Headwind)</strong> to be native parts of the MyWings core.</p>
+            
+            <div class="features-grid">
+                <div class="feature-item">
+                    <h4>Core Systems</h4>
+                    <p>Optimized for deep Airbus and Boeing systems. A simulator built from the ground up for complex avionics and detailed hydraulic circuits.</p>
+                </div>
+                <div class="feature-item">
+                    <h4>Open Architecture</h4>
+                    <p>SDK designed to make aircraft implementation smoother than ever. Every flight model parameter is fully documented.</p>
+                </div>
+                <div class="feature-item">
+                    <h4>Community Code</h4>
+                    <p>Every line of simulator code is available on GitHub. Transparency is our priority – from wheel physics to cloud rendering.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="card" style="margin: 20px 0; border-left: 4px solid #00c6ff; background: linear-gradient(145deg, #0d111b, #151a26); padding: 30px;">
+            <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 20px;">
+                <div style="flex: 1; min-width: 280px;">
+                    <span class="subtitle" style="letter-spacing: 3px; font-size: 10px; color: #00c6ff; font-family: 'Orbitron';">Follow Us</span>
+                    <h3 style="margin: 10px 0; font-family: 'Orbitron'; color: white;">Stay Connected!</h3>
+                    <p style="color: #a0a0a0; font-size: 14px; margin: 0;">Get the latest updates and connect with the community.</p>
+                </div>
+                <div style="display: flex; gap: 15px; flex-wrap: wrap;">
+                    <a href="#" class="social-btn discord" title="Discord"><i class="fa-brands fa-discord"></i></a>
+                    <a href="#" class="social-btn youtube" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                    <a href="#" class="social-btn instagram" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" class="social-btn tiktok" title="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="card" style="background: linear-gradient(145deg, #0d111b, #151a26);">
+            <span class="subtitle">Under the Hood</span>
+            <h3>Uncompromising Engine</h3>
+            <p>MyWings 2026 runs on a custom rendering core built on <strong>Vulkan 1.3</strong>, allowing for high performance even on mid-range systems while maintaining photorealistic visuals.</p>
+            <div class="features-grid">
+                <div class="feature-item">
+                    <h4>Atmospheric Effects</h4>
+                    <p>Dynamic weather based on real METAR and GFS data. Real-time air flow simulation, including thermals and mountain turbulence.</p>
+                </div>
+                <div class="feature-item">
+                    <h4>Global Scenery</h4>
+                    <p>A combination of satellite imagery and procedurally generated terrain for worldwide coverage with high-detail airports.</p>
+                </div>
+            </div>
+        </div>
+
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 25px; margin-top: 50px;">
+            <div>
+                <span class="subtitle">Support & Specs</span>
+                <h3>Frequently Asked Questions</h3>
+            </div>
+            <button class="btn" style="padding: 10px 20px; font-size: 12px; border: 1px solid #00c6ff; background: transparent;">Documentation</button>
+        </div>
+
+        <div class="faq-container">
+            <div class="faq-content">
+                <div class="faq-item">
+                    <i class="fa-solid fa-microchip"></i>
+                    <h4>Minimum Requirements</h4>
+                    <ul class="req-list">
+                        <li><strong>OS:</strong> Windows 10 or 11 (64-bit)</li>
+                        <li><strong>CPU:</strong> Intel i3/i5/i7/i9 (4+ cores) / AMD Ryzen 3/5/7</li>
+                        <li><strong>RAM:</strong> 8 GB (16 GB recommended for VR)</li>
+                        <li><strong>GPU:</strong> NVIDIA/AMD with Vulkan 1.3 support (min 4GB VRAM)</li>
+                        <li><strong>Storage:</strong> 25 GB SSD</li>
+                    </ul>
+                </div>
+                <div class="faq-item">
+                    <i class="fa-solid fa-gamepad"></i>
+                    <h4>Joystick Support?</h4>
+                    <p>Yes, the simulator fully supports various hardware. With native mapping, just plug and play for most Thrustmaster, Logitech, and Honeycomb models.</p>
+                </div>
+            </div>
+            <div class="faq-visual">
+                <img src="https://cdn.flightsim.to/images/27/easyjet-eurovision-2025-fbw-a32nx-g-uzhs-8k-577192-1752760672-MWYhx.jpg" alt="Sim Detail">
+                <p style="font-size: 12px; margin-top: 10px; text-align: center; font-style: italic;">Early Alpha capture – real-time rendering.</p>
+            </div>
+        </div>
+
+        <div class="card" style="margin: 20px 0; border-top: 3px solid #00c6ff; background: linear-gradient(145deg, #0d111b, #151a26); text-align: center; padding: 40px 20px;">
+            <div style="margin-bottom: 20px;">
+                <div class="coffee-icon"><i class="fa-solid fa-mug-hot" style="color: #00c6ff; font-size: 40px;"></i></div>
+            </div>
+            <h3 style="font-family: 'Orbitron'; color: white; margin-bottom: 10px;">Support MyWings Development</h3>
+            <p style="color: #a0a0a0; max-width: 500px; margin: 0 auto 25px auto; font-size: 14px; line-height: 1.6;">
+                Enjoying the sim? Every contribution helps us keep servers running and speed up development. Thanks for the coffee!
+            </p>
+            <a href="#" target="_blank" class="donate-btn"><i class="fa-solid fa-heart"></i> Buy us a Coffee (Donate)</a>
+        </div>
+    </section>
+
+    <section id="download">
+        <div class="card" style="text-align:center;">
+            <span class="subtitle">Download Center</span>
+            <h3>Get MyWings 2026</h3>
+            <p>Currently in early development (Alpha). Download the installer to access latest builds.</p>
+            <button onclick="show('download_final')" class="btn" style="margin-top:20px;">Download Installer for Windows</button>
+        </div>
+    </section>
+
+    <section id="community">
+        <div class="card" style="border-top: 3px solid #00c6ff;">
+            <span class="subtitle"><i class="fa-solid fa-users"></i> Community Hub</span>
+            <h3>Bulletin Board</h3>
+            <p>Share your screenshots and ideas. <span style="color: #00c6ff;">Images are optional.</span></p>
+            <button class="btn" onclick="openPostModal()" style="margin-top: 10px;">
+                <i class="fa-solid fa-pen-to-square"></i> Create Post
+            </button>
+            <div id="community-feed" class="news-grid" style="margin-top: 40px;"></div>
+        </div>
+
+        <div id="post-modal" class="video-modal" style="display: none; align-items: center; justify-content: center; backdrop-filter: blur(8px);">
+            <div class="card" style="max-width: 500px; width: 95%; position: relative; border: 1px solid #00c6ff;">
+                <span class="close-video" onclick="closePostModal()">&times;</span>
+                <h3 style="text-align: center;"><i class="fa-solid fa-paper-plane"></i> New Post</h3>
+                <form id="community-form">
+                    <div style="margin-bottom: 15px;">
+                        <label style="font-size: 10px; color: #00c6ff;"><i class="fa-solid fa-envelope"></i> EMAIL (for verification)</label>
+                        <input type="email" id="post-email" required placeholder="pilot@email.com" 
+                               style="width:100%; padding: 10px; background: rgba(255,255,255,0.05); border: 1px solid #333; color: white; border-radius: 8px;">
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <label style="font-size: 10px; color: #00c6ff;"><i class="fa-solid fa-user"></i> NICKNAME</label>
+                        <input type="text" id="post-nickname" required maxlength="20" placeholder="Captain Maverick" 
+                               style="width:100%; padding: 10px; background: rgba(255,255,255,0.05); border: 1px solid #333; color: white; border-radius: 8px;">
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <label style="font-size: 10px; color: #00c6ff;"><i class="fa-solid fa-comment"></i> MESSAGE</label>
+                        <textarea id="post-message" rows="3" required maxlength="200" placeholder="Flying from Prague to London..." 
+                                  style="width:100%; padding: 10px; background: rgba(255,255,255,0.05); border: 1px solid #333; color: white; border-radius: 8px; resize: none;"></textarea>
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <label style="font-size: 10px; color: #00c6ff;"><i class="fa-solid fa-image"></i> SCREENSHOT (optional)</label>
+                        <input type="file" id="post-file" accept="image/*" 
+                               style="width:100%; padding: 8px; background: #0d111b; border: 1px dashed #555; color: #888; border-radius: 8px;">
+                    </div>
+                    <div style="margin-bottom: 20px; display: flex; align-items: flex-start; gap: 10px; text-align: left;">
+                        <input type="checkbox" id="rules-check" required style="margin-top: 4px;">
+                        <label for="rules-check" style="font-size: 11px; color: #a0a0a0;">
+                            <i class="fa-solid fa-shield-halved"></i> I agree to the rules. No profanity or spam.
+                        </label>
+                    </div>
+                    <button type="submit" class="btn" style="width: 100%;">PUBLISH</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <section id="download_final">
+        <div class="card" style="text-align:center;">
+            <span class="subtitle" id="download-subtitle">Download Center</span>
+            <h3 id="download-title">Get MyWings 2026</h3>
+            <p id="download-desc">Choose your platform and start flying. Current version: <strong>v1.2.4 (Alpha)</strong></p>
+
+            <div class="features-grid" style="margin-top: 40px;">
+                <div class="feature-item" style="cursor:pointer;" onclick="startDownload('Windows')">
+                    <i class="fa-brands fa-windows" style="font-size: 40px; color: #00c6ff; margin-bottom: 15px;"></i>
+                    <h4>Windows</h4>
+                    <p>Installer for Win 10/11</p>
+                    <span class="read-more">Download .exe</span>
+                </div>
+                <div class="feature-item" style="cursor:pointer;" onclick="startDownload('macOS')">
+                    <i class="fa-brands fa-apple" style="font-size: 40px; color: #fff; margin-bottom: 15px;"></i>
+                    <h4>macOS</h4>
+                    <p>Intel & Apple Silicon</p>
+                    <span class="read-more">Download .dmg</span>
+                </div>
+                <div class="feature-item" style="cursor:pointer;" onclick="startDownload('Android')">
+                    <i class="fa-brands fa-android" style="font-size: 40px; color: #a4c639; margin-bottom: 15px;"></i>
+                    <h4>Android</h4>
+                    <p>Mobile Alpha version</p>
+                    <span class="read-more">Download .apk</span>
+                </div>
+            </div>
+
+            <div id="download-countdown" style="display:none; margin-top: 30px; padding: 25px; border: 1px dashed #00c6ff; border-radius: 15px; background: rgba(0, 198, 255, 0.05);">
+                <p id="countdown-text">Your download for <strong id="platform-name"></strong> starts in <span id="seconds">10</span> seconds...</p>
+                <div style="width: 100%; background: rgba(255,255,255,0.1); height: 6px; margin-top: 15px; border-radius: 10px; overflow: hidden;">
+                    <div id="progress-bar" style="width: 100%; background: linear-gradient(90deg, #00c6ff, #0072ff); height: 100%; transition: 1s linear;"></div>
+                </div>
+            </div>
+
+            <div style="margin-top: 50px;">
+                <button class="btn" style="background: transparent; border: 1px solid #444; color: #888;" onclick="toggleArchive()">
+                    <i class="fa-solid fa-clock-rotate-left"></i> Show Older Versions
+                </button>
+                <div id="version-archive" style="display:none; margin-top: 25px; background: rgba(13, 17, 27, 0.8); border-radius: 15px; border: 1px solid rgba(255,255,255,0.05); overflow: hidden;">
+                    <table style="width: 100%; color: #a0a0a0; font-size: 14px; border-collapse: collapse; text-align: left;">
+                        <thead>
+                            <tr style="background: rgba(255,255,255,0.02); color: #fff;">
+                                <th style="padding: 15px;">Version</th>
+                                <th>Status</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                                <td style="padding: 15px;">v1.2.3</td>
+                                <td>Stable Alpha</td>
+                                <td><button class="read-more" style="background:none; border:none; cursor:pointer;" onclick="openVersionSelection('v1.2.3')">Select Platform</button></td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                                <td style="padding: 15px;">v1.2.0</td>
+                                <td>Legacy Build</td>
+                                <td><button class="read-more" style="background:none; border:none; cursor:pointer;" onclick="openVersionSelection('v1.2.0')">Select Platform</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="videoModal" class="video-modal" onclick="closeVideo()">
+        <div class="video-container" onclick="event.stopPropagation()">
+            <span class="close-video" onclick="closeVideo()">×</span>
+            <iframe id="trailerFrame" src="" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
+    </div>
+
+    <section id="world-update-section" class="section">
+    <div class="card">
+        <span class="subtitle">Latest Major Update</span>
+        <h3 style="margin-bottom: 30px;">Introducing Our <span class="animate-gradient">Next-Gen Global Scenery</span></h3>
+        
+        <p>Prepare to rediscover the world like never before. After years of dedicated development, our team is incredibly proud to unveil **Global Scenery 2.0** – a complete overhaul of the in-game world that redefines realism and immersion in flight simulation. This isn't just an update; it's a new foundation built for the future of virtual aviation.</p>
+        <p>Every corner of the planet has been meticulously reconstructed, utilizing cutting-edge photogrammetry data, satellite imagery, and advanced procedural generation techniques. From the sprawling urban jungles to the most remote natural wonders, every detail has been refined to offer an unparalleled visual experience.</p>
+
+        <div class="promo-banner" style="height: 400px; margin-bottom: 60px;">
+            <img src="img/CITYTOP.png" alt="Aerial view of a city at sunset" class="promo-bg">
+            <div class="promo-content">
+                <h4 style="color: white; font-family: 'Orbitron', sans-serif; font-size: 28px; margin-bottom: 15px; text-shadow: 0 0 15px rgba(0,0,0,0.8);">A New Era of Visual Fidelity</h4>
+                <p style="color: rgba(255,255,255,0.8); font-size: 18px;">Witness breathtaking landscapes and vibrant cityscapes in stunning detail.</p>
+            </div>
+        </div>
+
+        <h4>Unprecedented Detail, Everywhere You Look</h4>
+        <p>Our new world engine processes high-resolution terrain meshes, allowing for incredibly accurate topographical representation. You'll notice subtle inclines, dramatic cliff faces, and intricate riverbeds that were previously impossible to render with such precision. This foundational improvement ensures that your low-altitude sightseeing and high-altitude cruising are equally captivating.</p>
+        <p>The entire world now boasts **true-to-life vegetation distribution**. Forests are denser, deserts stretch further, and agricultural lands reflect their real-world counterparts. Our procedural systems dynamically adapt vegetation types and density based on climate, altitude, and geographical features, creating a living, breathing environment.</p>
+
+        <div class="gallery-wrapper" style="margin-top: 40px; margin-bottom: 60px;">
+            <div class="gallery-track" id="worldUpdateGalleryTrack">
+                <img src="img/CITYTOP.png" alt="City buildings from above">
+                <img src="img/CITY.png" alt="Mountain range with clouds">
+                <img src="img/CITY.png" alt="Coastal city with clear water">
+                <img src="img/CITY.png" alt="Desert landscape from above">
+                <img src="img/CITY.png" alt="Snowy mountains and forests">
+            </div>
+            <div style="text-align: center; margin-top: 20px;">
+                <button class="btn" onclick="moveWorldUpdateGallery(-1)" style="margin-right: 10px;">&larr; Previous</button>
+                <button class="btn" onclick="moveWorldUpdateGallery(1)">Next &rarr;</button>
+            </div>
+        </div>
+
+        <h4>Dynamic Cities and Iconic Landmarks</h4>
+        <p>Our urban environments have received a massive upgrade. Major cities around the globe now feature **realistic building heights and layouts**, reflecting their unique architectural styles. Procedurally generated buildings blend seamlessly with meticulously modeled iconic landmarks, making navigation by visual cues more authentic than ever.</p>
+        <p>Imagine flying past the Eiffel Tower with accurate surrounding districts, or navigating the bustling skylines of New York with an unprecedented level of detail. The night lighting has also been completely re-engineered, transforming nocturnal flights into mesmerizing experiences with realistic light pollution and distinct urban glow patterns.</p>
+
+        <p style="margin-top: 30px;">This monumental update is available now for all MyWings users. We can't wait for you to explore this truly next-generation world. Happy flying!</p>
+        
+        <div style="text-align: center; margin-top: 50px;">
+            <a href="#" class="btn">Start Your Global Journey Today!</a>
+        </div>
+    </div>
+</section>
+<section id="clouds-section" class="section">
+    <div class="card">
+        <span class="subtitle">Advanced Technology Update</span>
+        <h3>The Sky is No Longer a <span class="animate-gradient">Limit</span></h3>
+        
+        <p>We are pushing the boundaries of what's possible in flight simulation. Our latest update introduces **True Sky 2.0**, a fully volumetric cloud system that transforms the atmosphere from a static background into a living, breathing physical environment. For the first time, you won't just fly *under* the clouds—you will fly *through* them.</p>
+        
+        <p>Every cloud is now a 3D object composed of millions of light-scattering particles. This means you’ll experience realistic shadows inside the cockpit, blinding sun glare as you exit a cloud bank, and the true sensation of speed as wisps of mist rush past your windows.</p>
+
+        <div class="promo-banner" style="height: 450px; margin: 50px 0;">
+            <img src="https://images.unsplash.com/photo-1536431311719-398b6704d4cc?auto=format&fit=crop&q=80&w=1500" alt="Volumetric Clouds at Sunset" class="promo-bg">
+            <div class="promo-content">
+                <h4 style="color: white; font-family: 'Orbitron', sans-serif; font-size: 28px; margin-bottom: 15px; text-shadow: 0 0 15px rgba(0,0,0,0.8);">Atmospheric Immersion</h4>
+                <p style="color: rgba(255,255,255,0.8); font-size: 18px;">Real-time lighting, moisture simulation, and dynamic weather cells.</p>
+            </div>
+        </div>
+
+        <h4>A Living, Breathing Atmosphere</h4>
+        <p>Our clouds are powered by a complex **Fluid Dynamics System**. They aren't just placed there; they grow, shift, and dissipate based on real-time humidity and wind vectors. If a storm is brewing, you will see massive cumulonimbus towers forming in the distance, casting long, dramatic shadows over the landscape below.</p>
+        
+        <div class="features-grid" style="grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); margin: 40px 0;">
+            <div class="feature-item">
+                <i class="fa-solid fa-sun" style="font-size: 24px; color: #00c6ff; margin-bottom: 10px;"></i>
+                <h4>Ray-Marching</h4>
+                <p style="font-size: 13px;">Advanced light calculations that allow for realistic "God rays" and internal cloud illumination.</p>
+            </div>
+            <div class="feature-item">
+                <i class="fa-solid fa-wind" style="font-size: 24px; color: #00c6ff; margin-bottom: 10px;"></i>
+                <h4>Turbulence Logic</h4>
+                <p style="font-size: 13px;">The aircraft reacts physically to the air density within different cloud formations.</p>
+            </div>
+            <div class="feature-item">
+                <i class="fa-solid fa-droplet" style="font-size: 24px; color: #00c6ff; margin-bottom: 10px;"></i>
+                <h4>Dynamic Moisture</h4>
+                <p style="font-size: 13px;">Watch condensation form on your windshield as you pierce through high-humidity layers.</p>
+            </div>
+        </div>
+
+        <div class="gallery-wrapper" style="margin-top: 40px; margin-bottom: 60px;">
+            <div class="gallery-track" id="cloudsGalleryTrack">
+                <img src="https://images.unsplash.com/photo-1590055531615-f16d36fed8a1?auto=format&fit=crop&q=80&w=600" alt="Heavy storm clouds">
+                <img src="https://images.unsplash.com/photo-1513002749550-c59d786b8e6c?auto=format&fit=crop&q=80&w=600" alt="Fluffy cumulus layers">
+                <img src="https://images.unsplash.com/photo-1504608524841-42fe6f032b4b?auto=format&fit=crop&q=80&w=600" alt="Storm lightning in clouds">
+                <img src="https://images.unsplash.com/photo-1496450681664-3df85efbd29f?auto=format&fit=crop&q=80&w=600" alt="Sunrise cloud deck">
+                <img src="https://images.unsplash.com/photo-1532274402911-5a3b027c5bb7?auto=format&fit=crop&q=80&w=600" alt="High altitude cirrus">
+            </div>
+            <div style="text-align: center; margin-top: 20px;">
+                <button class="btn" onclick="moveCloudsGallery(-1)" style="margin-right: 10px;">&larr; Previous</button>
+                <button class="btn" onclick="moveCloudsGallery(1)">Next &rarr;</button>
+            </div>
+        </div>
+
+        <h4>Optimized Performance</h4>
+        <p>We know that rendering millions of particles can be taxing on hardware. That’s why we’ve implemented **Temporal Upscaling**, allowing for crisp, high-quality cloud edges without sacrificing your frame rate. Whether you are running on a high-end rig or a mid-range laptop, the sky will look magnificent.</p>
+
+        <div style="text-align: center; margin-top: 50px;">
+            <button class="btn" onclick="show('download')">Ready to fly? Download Now</button>
+        </div>
+    </div>
+</section>
+    <footer>
+        &copy; 2026 AMATER STUDIO | MyWings Open Source Project
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
